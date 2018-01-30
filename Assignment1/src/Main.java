@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class Main {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int n = 0;
@@ -14,19 +17,38 @@ public class Main {
 				}
 			} catch (java.util.InputMismatchException e) {
 				System.out.println("Error: Invalid input\nEnter a positive integer.");
-				s.next(); // https://stackoverflow.com/questions/3572160/how-to-handle-infinite-loop-caused-by-invalid-input-inputmismatchexception-usi
+				s.next();
 			}
 		}
-		//fiboSeriesItr(n);
-		//fiboSeriesRec(n);
+		fiboSeriesItr(n);
+		// fiboSeriesRec(n);
 
 		System.out.println("The answer to the ultimate question is: " + n);
-		}
+	}
+
+	/**
+	 * @param n
+	 */
 	public static void fiboSeriesItr(int n) {
 		// TODO Auto-generated constructor stub
+		System.out.print("Fibonacci series to " + n + ": ");
+		Integer j = 1, k = 0, h;
+		System.out.print(k + " ");
+		for (Integer i = 0; i <= n; i++) {
+			System.out.print(j + " ");
+			h = j;
+			j = j + k;
+			k = h;
+		}
+		System.out.println();
+
 	}
+
+	/**
+	 * @param n
+	 */
 	public static void fiboSeriesRec(int n) {
-		// TODO Auto-generated constructor stub
+
 	}
 
 }
