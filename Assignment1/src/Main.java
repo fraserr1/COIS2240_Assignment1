@@ -20,8 +20,8 @@ public class Main {
 				s.next();
 			}
 		}
-		fiboSeriesItr(n);
-		// fiboSeriesRec(n);
+		//fiboSeriesItr(n);
+		fiboSeriesRec(n);
 
 		System.out.println("The answer to the ultimate question is: " + n);
 	}
@@ -47,8 +47,24 @@ public class Main {
 	/**
 	 * @param n
 	 */
-	public static void fiboSeriesRec(int n) {
-
+	public static void fiboSeriesRec(int n){
+		for (Integer i = 1; i <= n; i++){
+			System.out.print(fiboNumberRec(i) + " ");
+		}
+		System.out.println();
+	}
+	/**
+	 * @param n
+	 * @return
+	 */
+	public static int fiboNumberRec(int n) {
+		if (n == 1) {
+			return 0;
+		} else if (n == 2) {
+			return 1;
+		} else {
+			return (fiboNumberRec(n-1) + fiboNumberRec(n-2));
+		}
 	}
 
 }
